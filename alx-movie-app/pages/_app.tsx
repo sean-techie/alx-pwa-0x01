@@ -1,11 +1,16 @@
-import Layout from "@/components/layout/Layout";
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import '../styles/globals.css'
+import Head from 'next/head'
 
-export default function App({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    <>
+      <Head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#000000" />
+      </Head>
       <Component {...pageProps} />
-    </Layout>
+    </>
   )
 }
+
+export default MyApp
